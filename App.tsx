@@ -8,15 +8,11 @@ import { styled } from "nativewind";
 import Container from "./components/atoms/containers/Container";
 import AnimatedItem from "./components/atoms/animations/AnimatedItem";
 
-const Test = styled(View);
-
 export default function App() {
   return (
     <Container>
-      <>
-        <AnimatedItem />
-        <StatusBar style="auto" />
-      </>
+      <AnimatedItem />
+      <StatusBar style="auto" />
     </Container>
   );
 }
