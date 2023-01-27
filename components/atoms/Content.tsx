@@ -1,13 +1,10 @@
-import { Text } from "react-native";
-import { styled } from "nativewind";
-
-const ContentView = styled(Text);
+import { Text, View } from "react-native";
 
 const Content = ({}) => {
   return (
-    <ContentView className="text-white  p-10">
+    <View style={{ backgroundColor: "orange" }}>
       <Text>Go Yo</Text>
-    </ContentView>
+    </View>
   );
 };
 

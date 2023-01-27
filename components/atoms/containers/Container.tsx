@@ -1,28 +1,31 @@
 import React, { FC, ReactNode } from "react";
-import { View, Dimensions } from "react-native";
-// import { styled } from "nativewind";
+import { View, Dimensions, StyleSheet } from "react-native";
 
 type ContainerProps = {
   children: ReactNode;
-  bg: string;
+  backgroundColor: string;
 };
-
-// const ContainerView = styled(View);
 
 const { height, width } = Dimensions.get("window");
 
 const Container: FC<ContainerProps> = ({ ...props }) => {
-  // console.log("props: ", props);
+  const { backgroundColor } = props;
 
-  const { bg } = props;
   return (
-    <View
-      className={`flex-1 items-center justify-center w-full`}
-      style={{ height: height, width: width }}
-    >
+    <View style={[styles.container, { backgroundColor }]}>
       {props.children}
     </View>
   );
 };
 
 export default Container;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    height,
+    width,
+  },
+});

@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 
-import { Text, Dimensions } from "react-native";
+import { Text, Dimensions, StyleSheet } from "react-native";
 import Animated from "react-native-reanimated";
-// import { styled } from "nativewind";
 
 type TitleProps = {
   title: string;
@@ -12,14 +11,21 @@ type TitleProps = {
 const { width } = Dimensions.get("window");
 
 const AnimTitle: FC<TitleProps> = ({ title, color }) => {
-  // const TitleHolder = styled(Animated.View);
-  // const TheTitle = styled(Text);
-
   return (
-    <Animated.View className="flex-1 bg-red-900 w-full justify-center align-center">
-      <Text className={`${color} text-center`}>{title}</Text>
+    <Animated.View style={styles.animated}>
+      <Text style={{ color, textAlign: "center" }}>{title}</Text>
     </Animated.View>
   );
 };
 
 export default AnimTitle;
+
+const styles = StyleSheet.create({
+  animated: {
+    width,
+    flex: 1,
+    // backgroundColor: "grey",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

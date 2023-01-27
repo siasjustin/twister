@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { View, SafeAreaView } from "react-native";
-// import { styled } from "nativewind";
+import { View, SafeAreaView, StyleSheet } from "react-native";
 
 import Container from "../atoms/containers/Container";
 import AnimItem from "../animations/AnimItem";
@@ -10,23 +9,18 @@ import AnimTitle from "../animations/AnimTitle";
 interface PageProps {
   title: string;
   index: number;
-  bg: string;
+  backgroundColor: string;
   color: string;
 }
 
-// const Header = styled(View);
-// const Body = styled(View);
-
-const Page: FC<PageProps> = ({ title, index, bg, color }) => {
+const Page: FC<PageProps> = ({ title, index, backgroundColor, color }) => {
   return (
-    <Container bg={bg}>
+    <Container backgroundColor={backgroundColor}>
       <SafeAreaView>
-        <View className="bg-gray-400 h-60 justify-center item-center w-full">
+        <View style={styles.headerHolder}>
           <AnimTitle title={title} color={color} />
         </View>
-        <View className="flex-1 justify-center items-center bg-indigo-900">
-          {index === 0 && <AnimItem />}
-        </View>
+        <View style={styles.centerer}>{index === 0 && <AnimItem />}</View>
         <View />
       </SafeAreaView>
     </Container>
@@ -34,3 +28,17 @@ const Page: FC<PageProps> = ({ title, index, bg, color }) => {
 };
 
 export default Page;
+
+const styles = StyleSheet.create({
+  headerHolder: {
+    height: 200,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+  },
+  centerer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

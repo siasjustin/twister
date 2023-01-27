@@ -1,6 +1,6 @@
 import React, { useState, useEffect, FC } from "react";
 
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, StyleSheet } from "react-native";
 
 import Animated, {
   useSharedValue,
@@ -14,8 +14,6 @@ import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
 } from "react-native-gesture-handler";
-
-// import { styled } from "nativewind";
 
 const handleRotation = (rotation: Animated.SharedValue<number>) => {
   "worklet";
@@ -37,8 +35,6 @@ const AnimatedItem: FC = () => {
   const scale = useSharedValue(1);
   const rotation = useSharedValue(0);
 
-  // const Anim = styled(Animated.View);
-  // const DropCircle = styled(View);
   const reanimatedStyle = useAnimatedStyle(() => {
     return {
       opacity: opacity.value,
@@ -99,13 +95,22 @@ const AnimatedItem: FC = () => {
 
   return (
     <Animated.View
-      className="bg-slate-900 rounded-full items-center justify-center"
-      style={{ width: CIRCLE_RADIUS * 2, height: CIRCLE_RADIUS * 2 }}
+      style={{
+        backgroundColor: "#333333",
+        borderRadius: 500,
+        alignItems: "center",
+        justifyContent: "center",
+        width: CIRCLE_RADIUS * 2,
+        height: CIRCLE_RADIUS * 2,
+      }}
     >
       <PanGestureHandler onGestureEvent={panGestureEvent}>
         <Animated.View
-          className="bg-pink-700"
-          style={[reanimatedStyle, rStyle, { height: SIZE, width: SIZE }]}
+          style={[
+            reanimatedStyle,
+            rStyle,
+            { height: SIZE, width: SIZE, backgroundColor: "pink" },
+          ]}
         />
       </PanGestureHandler>
     </Animated.View>
@@ -114,7 +119,8 @@ const AnimatedItem: FC = () => {
 
 export default AnimatedItem;
 
-//
+// keeping this here for reference.
+// How to pass useState as props
 
 interface aProps {
   isAnimating: boolean;
