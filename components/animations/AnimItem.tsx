@@ -15,7 +15,7 @@ import {
   PanGestureHandlerGestureEvent,
 } from "react-native-gesture-handler";
 
-import { styled } from "nativewind";
+// import { styled } from "nativewind";
 
 const handleRotation = (rotation: Animated.SharedValue<number>) => {
   "worklet";
@@ -37,8 +37,8 @@ const AnimatedItem: FC = () => {
   const scale = useSharedValue(1);
   const rotation = useSharedValue(0);
 
-  const Anim = styled(Animated.View);
-  const DropCircle = styled(View);
+  // const Anim = styled(Animated.View);
+  // const DropCircle = styled(View);
   const reanimatedStyle = useAnimatedStyle(() => {
     return {
       opacity: opacity.value,
@@ -98,17 +98,17 @@ const AnimatedItem: FC = () => {
   }, [isAnimating]);
 
   return (
-    <DropCircle
+    <Animated.View
       className="bg-slate-900 rounded-full items-center justify-center"
       style={{ width: CIRCLE_RADIUS * 2, height: CIRCLE_RADIUS * 2 }}
     >
       <PanGestureHandler onGestureEvent={panGestureEvent}>
-        <Anim
+        <Animated.View
           className="bg-pink-700"
           style={[reanimatedStyle, rStyle, { height: SIZE, width: SIZE }]}
         />
       </PanGestureHandler>
-    </DropCircle>
+    </Animated.View>
   );
 };
 
