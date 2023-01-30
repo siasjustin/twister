@@ -36,7 +36,7 @@ const Page: FC<PageProps> = ({ title, index, backgroundColor, color }) => {
         </View>
         {index === 0 && (
           <View style={styles.centerer}>
-            <Tagging keyboardStatus={keyboardStatus} />
+            <Tagging />
           </View>
         )}
         {index === 1 && (

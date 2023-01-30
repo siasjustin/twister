@@ -1,39 +1,10 @@
 import { FC, useEffect } from "react";
 import { ScrollView, View, Text, TextInput, Image } from "react-native";
-
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-} from "react-native-reanimated";
+import KeyboardListener from "../helpers/NewKeyboardListener";
 
 const SIZE = 320;
 
-// would like this to be KeyboardStatusType but that was causing typescript issues
-type KeyboardProps = {
-  keyboardStatus: {
-    isOn: boolean;
-    height: number;
-  };
-};
-
-const Tagging: FC<KeyboardProps> = ({ keyboardStatus }): JSX.Element => {
-  const offset = useSharedValue(0);
-  const keyboardBoosterStyle = useAnimatedStyle(() => {
-    return {
-      height: withTiming(offset.value),
-    };
-  }, []);
-
-  useEffect(() => {
-    if (keyboardStatus.isOn) {
-      console.log("Status is ON!!!", keyboardStatus);
-    } else {
-      console.log("WOMP WOMP", keyboardStatus);
-    }
-    offset.value = keyboardStatus.height + 70;
-  }, [keyboardStatus]);
-
+const Tagging: FC = (): JSX.Element => {
   return (
     <ScrollView
       style={{
@@ -65,8 +36,8 @@ const Tagging: FC<KeyboardProps> = ({ keyboardStatus }): JSX.Element => {
             }}
             value="hi"
           />
-          <Animated.View style={keyboardBoosterStyle} />
         </View>
+        <KeyboardListener />
       </View>
     </ScrollView>
   );
