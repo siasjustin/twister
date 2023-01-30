@@ -2,6 +2,7 @@ import React, { FC } from "react";
 
 import { Text, Dimensions, StyleSheet } from "react-native";
 import Animated from "react-native-reanimated";
+import { HeaderProps } from "../organisms/Header";
 
 type TitleProps = {
   title: string;

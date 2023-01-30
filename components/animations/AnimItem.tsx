@@ -60,7 +60,7 @@ const AnimatedItem: FC = () => {
     },
     onEnd: (event) => {
       const distance = Math.sqrt(translateX.value ** 2 + translateY.value ** 2);
-      if (distance < CIRCLE_RADIUS) {
+      if (distance > CIRCLE_RADIUS) {
         translateX.value = withSpring(0);
         translateY.value = withSpring(0);
       }
@@ -120,7 +120,7 @@ const AnimatedItem: FC = () => {
 export default AnimatedItem;
 
 // keeping this here for reference.
-// How to pass useState as props
+// git statHow to pass useState as props
 
 interface aProps {
   isAnimating: boolean;
