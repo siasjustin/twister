@@ -8,8 +8,8 @@ import Page from "./components/templates/Page";
 
 const PAGES = [
   { title: "Drag", bg: "rgba(0, 0, 0, 1)", color: "white" },
-  { title: "Tag", bg: "rgba(0, 0, 0, .8)", color: "yellow" },
-  { title: "Brag", bg: "rgba(0, 0, 0, .6)", color: "#eeeeee" },
+  { title: "Tag", bg: "rgba(0, 0, 0, .6)", color: "yellow" },
+  { title: "Brag", bg: "rgba(0, 0, 0, .4)", color: "#eeeeee" },
 ];
 
 export default function App() {
