@@ -5415,6 +5415,11 @@ react-native-gradle-plugin@^0.70.3:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"
   integrity sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==
 
+react-native-pan-pinch-view@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-pan-pinch-view/-/react-native-pan-pinch-view-1.0.1.tgz#9c8aff0f74ab3b74d839da655c2397011cb66410"
+  integrity sha512-gShQHJmWumuQXyBC/FVS9nf7in0UC+aFC8vzhGXnNNXje1Oc/7YY18qZl9w0oEwZJfJFraLKgahofDv79co8Cw==
+
 react-native-reanimated@~2.12.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.12.0.tgz#5821eecfb1769b1617a67a2d4dec12fdeedb2b6e"
